@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>SMITH PAUL 20230140230</h2>
+
+    <p>Selamat datang di aplikasi</p>
+
+    <a href="/form">+ Tambah Data Mahasiswa</a>
+
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+        </tr>
+
+        <tr th:each="u, stat : ${users}">
+            <td th:text="${stat.index + 1}"></td>
+            <td th:text="${u.nama}"></td>
+            <td th:text="${u.nim}"></td>
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>
